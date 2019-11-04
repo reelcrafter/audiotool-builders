@@ -1,0 +1,10 @@
+{
+  "name": "ffmpeg",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "build": "docker build . -t ffmpeg",
+    "install": "mkdir -p bin; id=$(docker create ffmpeg); docker cp $id:/FFmpeg/ffmpeg ./bin; docker rm -v $id && echo \"Binary available in bin directory\" && exit 0",
+    "clean": "docker rmi -f /ffmpeg"
+  }
+}
