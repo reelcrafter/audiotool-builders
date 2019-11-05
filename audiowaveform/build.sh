@@ -55,14 +55,6 @@ cd libogg-1.3.4
 make install
 cd /
 
-# Build boost
-wget https://sourceforge.net/projects/boost/files/boost/1.53.0/boost_1_53_0.tar.gz
-tar xf boost_1_53_0.tar.gz
-cd boost_1_53_0
-./bootstrap.sh --libdir=/lib64 --includedir=/usr/include
-./b2 link=static install
-cd /
-
 # Build libgd
 git clone https://github.com/libgd/libgd.git
 cd libgd
@@ -73,10 +65,19 @@ make
 mv Bin/libgd.a /lib64
 cd /
 
+# Build boost
+wget https://sourceforge.net/projects/boost/files/boost/1.69.0/boost_1_69_0.tar.gz
+tar xf boost_1_69_0.tar.gz
+cd boost_1_69_0
+./bootstrap.sh --libdir=/lib64 --includedir=/usr/include
+./b2 link=static install
+cd /
+
 # Build audiowaveform
 wget https://github.com/bbc/audiowaveform/archive/1.4.0.tar.gz
 tar xzf 1.4.0.tar.gz
-cd audiowaveform-1.4.0
+mv audiowaveform-1.4.0 audiowaveform
+cd $_
 mkdir build
 cd $_
 cmake3 -D ENABLE_TESTS=0 -D BUILD_STATIC=1 ..
