@@ -39,18 +39,18 @@ cd flac-1.3.0
 make install
 cd /
 
-# Build libvorbis
-wget http://downloads.xiph.org/releases/vorbis/libvorbis-1.3.6.tar.gz
-tar xf libvorbis-1.3.6.tar.gz
-cd libvorbis-1.3.6
-./configure --disable-shared --libdir=/lib64
-make install
-cd /
-
 # Build libogg
 wget http://downloads.xiph.org/releases/ogg/libogg-1.3.4.tar.gz
 tar xf libogg-1.3.4.tar.gz
 cd libogg-1.3.4
+./configure --disable-shared --libdir=/lib64
+make install
+cd /
+
+# Build libvorbis
+wget http://downloads.xiph.org/releases/vorbis/libvorbis-1.3.6.tar.gz
+tar xf libvorbis-1.3.6.tar.gz
+cd libvorbis-1.3.6
 ./configure --disable-shared --libdir=/lib64
 make install
 cd /
