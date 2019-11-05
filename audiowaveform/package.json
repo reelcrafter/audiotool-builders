@@ -1,11 +1,10 @@
 {
   "name": "docker",
   "version": "1.0.0",
-  "main": "index.js",
   "license": "MIT",
   "scripts": {
     "build": "docker build . -t wavecontainer",
-    "install": "id=$(docker create wavecontainer); docker cp $id:/audiowaveform/build/audiowaveform ./bin/audiowaveform; docker rm -v $id && echo \"Binary available in bin directory\" && exit 0",
-    "clean": "docker rm -f /wavecontainer"
+    "install": "mkdir -p bin; id=$(docker create wavecontainer); docker cp $id:/audiowaveform/build/audiowaveform ./bin/audiowaveform; docker rm -v $id && echo \"Binary available in bin directory\" && exit 0",
+    "clean": "docker rmi -f /wavecontainer"
   }
 }
