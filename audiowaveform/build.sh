@@ -60,7 +60,7 @@ git clone https://github.com/libgd/libgd.git
 cd libgd
 mkdir build
 cd $_
-cmake3 -DBUILD_STATIC_LIBS=1 ..
+cmake3 -DBUILD_STATIC_LIBS=1 -DENABLE_PNG=1 ..
 make
 mv Bin/libgd.a /lib64
 cd /
