@@ -15,6 +15,7 @@ cd FFmpeg
 ./configure --disable-everything --disable-doc --enable-static \
   --enable-decoder=pcm*,flac,mp3,wavpack,aac --enable-libmp3lame --enable-gpl \
   --enable-nonfree --enable-encoder=libmp3lame \
-  --enable-muxer=hls,segment,tee,mp3 --enable-demuxer=wav,mp3,mov,aiff \
-  --enable-protocol=file,pipe --enable-filter=aresample,afade
+  --enable-muxer=hls,segment,tee,mp3,ffmetadata \
+  --enable-demuxer=wav,mp3,mov,aiff,ffmetadata --enable-protocol=file,pipe \
+  --enable-filter=aresample,afade
 make
