@@ -12,6 +12,7 @@ cd /
 
 git clone https://github.com/FFmpeg/FFmpeg.git
 cd FFmpeg
+git checkout n4.4 # Only build stable releases
 ./configure --disable-everything --disable-doc --enable-static \
   --enable-decoder=pcm*,flac,mp3,wavpack,aac --enable-libmp3lame --enable-gpl \
   --enable-nonfree --enable-encoder=libmp3lame \
