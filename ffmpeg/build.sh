@@ -14,9 +14,9 @@ git clone https://github.com/FFmpeg/FFmpeg.git
 cd FFmpeg
 git checkout n4.4 # Only build stable releases
 ./configure --disable-everything --disable-doc --enable-static \
-  --enable-decoder=pcm*,flac,mp3,wavpack,aac --enable-libmp3lame --enable-gpl \
+  --enable-decoder=pcm*,flac,mp3,wavpack,aac,mjpeg --enable-libmp3lame --enable-gpl \
   --enable-nonfree --enable-encoder=libmp3lame \
-  --enable-muxer=hls,segment,tee,mp3,ffmetadata \
-  --enable-demuxer=wav,mp3,mov,aiff,ffmetadata --enable-protocol=file,pipe \
+  --enable-muxer=hls,segment,tee,mp3,ffmetadata,mjpeg,image2 \
+  --enable-demuxer=wav,mp3,mov,aiff,ffmetadata,mjpeg,image2 --enable-protocol=file,pipe \
   --enable-filter=aresample,afade
 make
