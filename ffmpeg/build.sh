@@ -15,8 +15,8 @@ cd FFmpeg
 git checkout n4.4 # Only build stable releases
 ./configure --disable-everything --disable-doc --enable-static \
   --enable-decoder=pcm*,flac,mp3,wavpack,aac,mjpeg,png --enable-libmp3lame --enable-gpl \
-  --enable-nonfree --enable-encoder=libmp3lame \
+  --enable-nonfree --enable-encoder=libmp3lame,png \
   --enable-muxer=hls,segment,tee,mp3,ffmetadata,mjpeg,image2,wav \
   --enable-demuxer=wav,mp3,mov,aiff,ffmetadata,mjpeg,image2 --enable-protocol=file,pipe \
-  --enable-filter=aresample,afade,volumedetect
+  --enable-filter=aresample,afade,volumedetect,scale
 make
