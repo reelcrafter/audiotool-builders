@@ -55,6 +55,14 @@ cd libvorbis-1.3.6
 make install
 cd /
 
+# Build libopus
+wget https://archive.mozilla.org/pub/opus/opus-1.3.1.tar.gz
+tar xzf opus-1.3.1.tar.gz
+cd opus-1.3.1
+./configure --disable-shared --libdir=/lib64
+make install
+cd /
+
 # Build libgd
 git clone https://github.com/libgd/libgd.git
 cd libgd
@@ -74,9 +82,10 @@ cd boost_1_69_0
 cd /
 
 # Build audiowaveform
-wget https://github.com/bbc/audiowaveform/archive/1.4.0.tar.gz
-tar xzf 1.4.0.tar.gz
-mv audiowaveform-1.4.0 audiowaveform
+AWF_VERSION=1.7.1
+wget https://github.com/bbc/audiowaveform/archive/$AWF_VERSION.tar.gz
+tar xzf $AWF_VERSION.tar.gz
+mv audiowaveform-$AWF_VERSION audiowaveform
 cd $_
 mkdir build
 cd $_
