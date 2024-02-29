@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# When building for arm64, uncomment everything in the "./configure" command lines
+
 set -ex
 
 # Build libid3tag
@@ -7,7 +9,7 @@ wget https://netix.dl.sourceforge.net/project/mad/libid3tag/0.15.1b/libid3tag-0.
 tar xzf libid3tag-0.15.1b.tar.gz
 cd libid3tag-0.15.1b
 sed -i 's/ -fforce-mem//' configure
-./configure --disable-shared --libdir=/lib64
+./configure --disable-shared --libdir=/lib64 # --build=aarch64-unknown-linux-gnu
 make install
 cd /
 
@@ -16,7 +18,7 @@ wget https://netix.dl.sourceforge.net/project/mad/libmad/0.15.1b/libmad-0.15.1b.
 tar xzf libmad-0.15.1b.tar.gz
 cd libmad-0.15.1b
 sed -i 's/ -fforce-mem//' configure
-./configure --disable-shared --libdir=/lib64
+./configure --disable-shared --libdir=/lib64 # --build=aarch64-unknown-linux-gnu
 make install
 cd /
 
@@ -27,7 +29,7 @@ tar xzf 1.0.28.tar.gz
 cd libsndfile-1.0.28
 sed -i 's/flac >= 1.3.1/flac >= 1.3.0/' configure.ac
 ./autogen.sh
-./configure --disable-shared --libdir=/lib64
+./configure --disable-shared --libdir=/lib64 # --build=aarch64-unknown-linux-gnu
 make install
 cd /
 
@@ -35,7 +37,7 @@ cd /
 wget https://ftp.osuosl.org/pub/xiph/releases/flac/flac-1.3.0.tar.xz
 tar xf flac-1.3.0.tar.xz
 cd flac-1.3.0
-./configure --disable-shared --libdir=/lib64
+./configure --disable-shared --libdir=/lib64 # --build=aarch64-unknown-linux-gnu
 make install
 cd /
 
@@ -43,7 +45,7 @@ cd /
 wget http://downloads.xiph.org/releases/ogg/libogg-1.3.4.tar.gz
 tar xf libogg-1.3.4.tar.gz
 cd libogg-1.3.4
-./configure --disable-shared --libdir=/lib64
+./configure --disable-shared --libdir=/lib64 # --build=aarch64-unknown-linux-gnu
 make install
 cd /
 
@@ -51,7 +53,7 @@ cd /
 wget http://downloads.xiph.org/releases/vorbis/libvorbis-1.3.6.tar.gz
 tar xf libvorbis-1.3.6.tar.gz
 cd libvorbis-1.3.6
-./configure --disable-shared --libdir=/lib64
+./configure --disable-shared --libdir=/lib64 # --build=aarch64-unknown-linux-gnu
 make install
 cd /
 
@@ -59,7 +61,7 @@ cd /
 wget https://archive.mozilla.org/pub/opus/opus-1.3.1.tar.gz
 tar xzf opus-1.3.1.tar.gz
 cd opus-1.3.1
-./configure --disable-shared --libdir=/lib64
+./configure --disable-shared --libdir=/lib64 # --build=aarch64-unknown-linux-gnu
 make install
 cd /
 
