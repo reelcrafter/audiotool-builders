@@ -84,7 +84,7 @@ cd boost_1_69_0
 cd /
 
 # Build audiowaveform
-AWF_VERSION=1.7.1
+AWF_VERSION=1.10.1
 wget https://github.com/bbc/audiowaveform/archive/$AWF_VERSION.tar.gz
 tar xzf $AWF_VERSION.tar.gz
 mv audiowaveform-$AWF_VERSION audiowaveform
